@@ -4,13 +4,11 @@ export default class SearchBar extends Component {
     state = {term: ''};
     
     searchIput = (event) => {
-        console.log(event.target.value);
         this.setState({term: event.target.value})
     }
     onFormSubmit = (event) =>{
         event.preventDefault();
-        
-
+        this.props.onFormSubmit(this.state.term);
     } 
     render() {
         return (
